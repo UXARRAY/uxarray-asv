@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "project": "uxarray",
+    "project_url": "https://github.com/UXARRAY/uxarray",
+    "repo": "https://github.com/UXARRAY/uxarray",
+    "branches": [
+        "main"
+    ],
+    "dvcs": "git",
+    "environment_type": "conda",
+    "benchmark_dir": "benchmark"
+}
