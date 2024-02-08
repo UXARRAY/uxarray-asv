@@ -17,12 +17,12 @@ jobs:
       - name: Checkout uxarray
         uses: actions/checkout@v4
         with:
-          repository: UXARRAY/uxarray
+          repository: philipc2/uxarray
           fetch-depth: 0
       - name: Checkout uxarray-asv
         uses: actions/checkout@v4
         with:
-          repository: UXARRAY/uxarray
+          repository: philipc2/uxarray
           persist-credentials: false
           fetch-depth: 0
           ref: main
@@ -76,7 +76,7 @@ jobs:
           git commit -m "[🤖] Update benchmark results"
 
       - name: Push to uxarray-asv
-        if: github.ref == 'refs/heads/main' && github.repository == 'UXARRAY/uxarray'
+        if: github.ref == 'refs/heads/main' && github.repository == 'philipc2/uxarray'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.UXARRAY_ASV_PAT }}
