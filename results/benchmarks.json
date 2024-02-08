@@ -1,0 +1,84 @@
+{
+    "import.Imports.timeraw_import_uxarray": {
+        "code": "class Imports:\n    def timeraw_import_uxarray(self):\n        return \"import uxarray\"",
+        "min_run_count": 2,
+        "name": "import.Imports.timeraw_import_uxarray",
+        "number": 1,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "05d7358a621ba8469294e43469945f02cd99857a9d23b35cc2a37d5c90deaf20",
+        "warmup_time": -1
+    },
+    "quad_hexagon.QuadHexagon.mem_open_dataset": {
+        "code": "class QuadHexagon:\n    def mem_open_dataset(self):\n        \"\"\"Memory occupied by a `UxDataset`\"\"\"\n        return ux.open_dataset(grid_path, data_path)",
+        "name": "quad_hexagon.QuadHexagon.mem_open_dataset",
+        "param_names": [],
+        "params": [],
+        "type": "memory",
+        "unit": "bytes",
+        "version": "34645b591d44201dd634fab2d72ae24b5f133232d4c2d67b76bc7596557d1109"
+    },
+    "quad_hexagon.QuadHexagon.mem_open_grid": {
+        "code": "class QuadHexagon:\n    def mem_open_grid(self):\n        \"\"\"Memory Occupied by a `Grid`\"\"\"\n        return ux.open_grid(grid_path)",
+        "name": "quad_hexagon.QuadHexagon.mem_open_grid",
+        "param_names": [],
+        "params": [],
+        "type": "memory",
+        "unit": "bytes",
+        "version": "49b6d6e90eef5a27c798702f1e9d436471728bd53d2b51cc81611007f57ad76b"
+    },
+    "quad_hexagon.QuadHexagon.peakmem_open_dataset": {
+        "code": "class QuadHexagon:\n    def peakmem_open_dataset(self):\n        \"\"\"Peak memory usage of a `UxDataset`\"\"\"\n        uxds = ux.open_dataset(grid_path, data_path)",
+        "name": "quad_hexagon.QuadHexagon.peakmem_open_dataset",
+        "param_names": [],
+        "params": [],
+        "type": "peakmemory",
+        "unit": "bytes",
+        "version": "ad0aeefdf056572ee11796d0103ffa9a88e7bf04c8f9c3725d6c2d890fa188f0"
+    },
+    "quad_hexagon.QuadHexagon.peakmem_open_grid": {
+        "code": "class QuadHexagon:\n    def peakmem_open_grid(self):\n        \"\"\"Peak memory usage of a `Grid`\"\"\"\n        uxgrid = ux.open_grid(grid_path)",
+        "name": "quad_hexagon.QuadHexagon.peakmem_open_grid",
+        "param_names": [],
+        "params": [],
+        "type": "peakmemory",
+        "unit": "bytes",
+        "version": "0d8b965012ecb7916a2b6ca64acae11befae73b3890c5e1ed06f092e9cb0def0"
+    },
+    "quad_hexagon.QuadHexagon.time_open_dataset": {
+        "code": "class QuadHexagon:\n    def time_open_dataset(self):\n        \"\"\"Time to open a `UxDataset`\"\"\"\n        ux.open_dataset(grid_path, data_path)",
+        "min_run_count": 2,
+        "name": "quad_hexagon.QuadHexagon.time_open_dataset",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "04f0374471175756c99c2792d638ac40872fdbe2301368ec39fd096f4195fa9a",
+        "warmup_time": -1
+    },
+    "quad_hexagon.QuadHexagon.time_open_grid": {
+        "code": "class QuadHexagon:\n    def time_open_grid(self):\n        \"\"\"Time to open a `Grid`\"\"\"\n        ux.open_grid(grid_path)",
+        "min_run_count": 2,
+        "name": "quad_hexagon.QuadHexagon.time_open_grid",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "23b984b5aa811d5e0d05013c8e071d46285a6908fa146376bc3ca71591fa251a",
+        "warmup_time": -1
+    },
+    "version": 2
+}
