@@ -10,7 +10,7 @@ jobs:
   benchmark:
     runs-on: ubuntu-latest
     env:
-      CONDA_ENV_FILE: ./ci/asv.yml
+      CONDA_ENV_FILE: ci/asv.yml
       ASV_DIR: ./benchmarks
 
     steps:
@@ -36,7 +36,7 @@ jobs:
         continue-on-error: true
         uses: mamba-org/setup-micromamba@v1
         with:
-          environment-file: ./ci/asv.yml
+          environment-file: ci/asv.yml
           cache-environment: true
           cache-environment-key: "benchmark-${{runner.os}}-${{runner.arch}}-${{env.TODAY}}"
 
@@ -45,7 +45,7 @@ jobs:
         uses: mamba-org/setup-micromamba@v1
         with:
           download-micromamba: false
-          environment-file: ./ci/asv.yml
+          environment-file: ci/asv.yml
           cache-environment: true
           cache-environment-key: "benchmark-${{runner.os}}-${{runner.arch}}-${{env.TODAY}}"
 
