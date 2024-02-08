@@ -51,7 +51,7 @@ jobs:
 
       - name: Copy existing results
         run: |
-          if [ -d uxarray-asv/results" ]; then
+          if [ -d "uxarray-asv/results" ]; then
             cp -r uxarray-asv/results benchmarks/
           fi
 
