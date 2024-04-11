@@ -1,4 +1,46 @@
 {
+    "face_bounds.FaceBounds.peakmem_face_bounds": {
+        "code": "class FaceBounds:\n    def peakmem_face_bounds(self, grid_path):\n        \"\"\"Peak memory usage obtain ``Grid.face_bounds.\"\"\"\n        face_bounds = self.uxgrid.bounds\n\n    def setup(self, grid_path):\n        self.uxgrid = ux.open_grid(grid_path)",
+        "name": "face_bounds.FaceBounds.peakmem_face_bounds",
+        "param_names": [
+            "param1"
+        ],
+        "params": [
+            [
+                "PosixPath('/home/runner/work/uxarray/uxarray/test/meshfiles/ugrid/quad-hexagon/grid.nc')",
+                "PosixPath('/home/runner/work/uxarray/uxarray/test/meshfiles/ugrid/geoflow-small/grid.nc')",
+                "PosixPath('/home/runner/work/uxarray/uxarray/test/meshfiles/scrip/outCSne8/outCSne8.nc')",
+                "PosixPath('/home/runner/work/uxarray/uxarray/test/meshfiles/mpas/QU/oQU480.231010.nc')"
+            ]
+        ],
+        "type": "peakmemory",
+        "unit": "bytes",
+        "version": "264d64f2871bf9cf43d671ee77406801857632dd9da3cdd4302188c9f73740e4"
+    },
+    "face_bounds.FaceBounds.time_face_bounds": {
+        "code": "class FaceBounds:\n    def time_face_bounds(self, grid_path):\n        \"\"\"Time to obtain ``Grid.face_bounds``\"\"\"\n        self.uxgrid.bounds\n\n    def setup(self, grid_path):\n        self.uxgrid = ux.open_grid(grid_path)",
+        "min_run_count": 2,
+        "name": "face_bounds.FaceBounds.time_face_bounds",
+        "number": 0,
+        "param_names": [
+            "param1"
+        ],
+        "params": [
+            [
+                "PosixPath('/home/runner/work/uxarray/uxarray/test/meshfiles/ugrid/quad-hexagon/grid.nc')",
+                "PosixPath('/home/runner/work/uxarray/uxarray/test/meshfiles/ugrid/geoflow-small/grid.nc')",
+                "PosixPath('/home/runner/work/uxarray/uxarray/test/meshfiles/scrip/outCSne8/outCSne8.nc')",
+                "PosixPath('/home/runner/work/uxarray/uxarray/test/meshfiles/mpas/QU/oQU480.231010.nc')"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "59ab137a0d4a031edd79f08b2454bef8eeb9cd8ef799f72e5272f249063ec61d",
+        "warmup_time": -1
+    },
     "import.Imports.timeraw_import_uxarray": {
         "code": "class Imports:\n    def timeraw_import_uxarray(self):\n        return \"import uxarray\"",
         "min_run_count": 2,
