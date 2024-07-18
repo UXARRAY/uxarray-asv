@@ -56,6 +56,28 @@
         "version": "05d7358a621ba8469294e43469945f02cd99857a9d23b35cc2a37d5c90deaf20",
         "warmup_time": -1
     },
+    "mpas_ocean.ConnectivityConstruction.time_face_face_connectivity": {
+        "code": "class ConnectivityConstruction:\n    def time_face_face_connectivity(self, resolution):\n        ux.grid.connectivity._populate_face_face_connectivity(self.uxds.uxgrid)\n\n    def setup(self, resolution):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.ConnectivityConstruction.time_face_face_connectivity",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "ae27a3df82c890aa93df87fc5f67ba8e0c4b51f85da767fac702be7ef05bfa92",
+        "warmup_time": -1
+    },
     "mpas_ocean.ConnectivityConstruction.time_n_nodes_per_face": {
         "code": "class ConnectivityConstruction:\n    def time_n_nodes_per_face(self, resolution):\n        self.uxds.uxgrid.n_nodes_per_face\n\n    def setup(self, resolution):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
@@ -202,23 +224,33 @@
         "version": "4884ecd1a6d03e961f2ac877955cd44cbd952b85df5df47398dc92317dfe65a3",
         "warmup_time": -1
     },
-    "quad_hexagon.QuadHexagon.mem_open_dataset": {
-        "code": "class QuadHexagon:\n    def mem_open_dataset(self):\n        \"\"\"Memory occupied by a `UxDataset`\"\"\"\n        return ux.open_dataset(grid_path, data_path)",
-        "name": "quad_hexagon.QuadHexagon.mem_open_dataset",
-        "param_names": [],
-        "params": [],
-        "type": "memory",
-        "unit": "bytes",
-        "version": "34645b591d44201dd634fab2d72ae24b5f133232d4c2d67b76bc7596557d1109"
-    },
-    "quad_hexagon.QuadHexagon.mem_open_grid": {
-        "code": "class QuadHexagon:\n    def mem_open_grid(self):\n        \"\"\"Memory Occupied by a `Grid`\"\"\"\n        return ux.open_grid(grid_path)",
-        "name": "quad_hexagon.QuadHexagon.mem_open_grid",
-        "param_names": [],
-        "params": [],
-        "type": "memory",
-        "unit": "bytes",
-        "version": "49b6d6e90eef5a27c798702f1e9d436471728bd53d2b51cc81611007f57ad76b"
+    "mpas_ocean.MatplotlibConversion.time_dataarray_to_polycollection": {
+        "code": "class MatplotlibConversion:\n    def time_dataarray_to_polycollection(self, resolution, periodic_elements):\n        self.uxds[data_var].to_polycollection()\n\n    def setup(self, resolution, periodic_elements):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.MatplotlibConversion.time_dataarray_to_polycollection",
+        "number": 0,
+        "param_names": [
+            "resolution",
+            "periodic_elements"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ],
+            [
+                "'include'",
+                "'exclude'",
+                "'split'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "26e4314dabc51bab6febda69c8d170ce4502991ee109dbf89fde2f038c3a678c",
+        "warmup_time": -1
     },
     "quad_hexagon.QuadHexagon.peakmem_open_dataset": {
         "code": "class QuadHexagon:\n    def peakmem_open_dataset(self):\n        \"\"\"Peak memory usage of a `UxDataset`\"\"\"\n        uxds = ux.open_dataset(grid_path, data_path)",
