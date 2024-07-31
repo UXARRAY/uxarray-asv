@@ -100,6 +100,50 @@
         "version": "dad5686c3187a018e28621fd2e0ce788e613f508ba3cf7e3cc8136d2423c5fbf",
         "warmup_time": -1
     },
+    "mpas_ocean.ConstructTreeStructures.time_ball_tree": {
+        "code": "class ConstructTreeStructures:\n    def time_ball_tree(self, resolution):\n        self.uxds.uxgrid.get_ball_tree()\n\n    def setup(self, resolution):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.ConstructTreeStructures.time_ball_tree",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "f1f3fea03a00052ef8c3e75069560761700a091dce616cf32ab1503dfd1cd0b9",
+        "warmup_time": -1
+    },
+    "mpas_ocean.ConstructTreeStructures.time_kd_tree": {
+        "code": "class ConstructTreeStructures:\n    def time_kd_tree(self, resolution):\n        self.uxds.uxgrid.get_kd_tree()\n\n    def setup(self, resolution):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.ConstructTreeStructures.time_kd_tree",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "fc440c582485de0d25b1bbb1e0450bedd0c0c0ebd7b64c4c51022871f790a932",
+        "warmup_time": -1
+    },
     "mpas_ocean.GeoDataFrame.peakmem_to_geodataframe": {
         "code": "class GeoDataFrame:\n    def peakmem_to_geodataframe(self, resolution, exclude_antimeridian):\n        gdf = self.uxds[data_var].to_geodataframe(exclude_antimeridian=exclude_antimeridian)\n\n    def setup(self, resolution, exclude_antimeridian):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "name": "mpas_ocean.GeoDataFrame.peakmem_to_geodataframe",
@@ -250,6 +294,66 @@
         "type": "time",
         "unit": "seconds",
         "version": "26e4314dabc51bab6febda69c8d170ce4502991ee109dbf89fde2f038c3a678c",
+        "warmup_time": -1
+    },
+    "mpas_ocean.RemapDownsample.time_inverse_distance_weighted_remapping": {
+        "code": "class RemapDownsample:\n    def time_inverse_distance_weighted_remapping(self):\n        self.uxds_120[\"bottomDepth\"].remap.inverse_distance_weighted(self.uxds_480.uxgrid)\n\n    def setup(self):\n        self.uxds_120 = ux.open_dataset(file_path_dict['120km'][0], file_path_dict['120km'][1])\n        self.uxds_480 = ux.open_dataset(file_path_dict['480km'][0], file_path_dict['480km'][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.RemapDownsample.time_inverse_distance_weighted_remapping",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "35146054f62256ab927954781012aad8a15b03eef90a4aece78bf2b7002c4853",
+        "warmup_time": -1
+    },
+    "mpas_ocean.RemapDownsample.time_nearest_neighbor_remapping": {
+        "code": "class RemapDownsample:\n    def time_nearest_neighbor_remapping(self):\n        self.uxds_120[\"bottomDepth\"].remap.nearest_neighbor(self.uxds_480.uxgrid)\n\n    def setup(self):\n        self.uxds_120 = ux.open_dataset(file_path_dict['120km'][0], file_path_dict['120km'][1])\n        self.uxds_480 = ux.open_dataset(file_path_dict['480km'][0], file_path_dict['480km'][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.RemapDownsample.time_nearest_neighbor_remapping",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "3454ce734208221027c7080a56f1e679ae092a93516752a89474d75d7a705472",
+        "warmup_time": -1
+    },
+    "mpas_ocean.RemapUpsample.time_inverse_distance_weighted_remapping": {
+        "code": "class RemapUpsample:\n    def time_inverse_distance_weighted_remapping(self):\n        self.uxds_480[\"bottomDepth\"].remap.inverse_distance_weighted(self.uxds_120.uxgrid)\n\n    def setup(self):\n        self.uxds_120 = ux.open_dataset(file_path_dict['120km'][0], file_path_dict['120km'][1])\n        self.uxds_480 = ux.open_dataset(file_path_dict['480km'][0], file_path_dict['480km'][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.RemapUpsample.time_inverse_distance_weighted_remapping",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "0836cc8c471952d8a557cf8d6c1d3c0677d0193d4ad961126f0bd34dab5dd9b9",
+        "warmup_time": -1
+    },
+    "mpas_ocean.RemapUpsample.time_nearest_neighbor_remapping": {
+        "code": "class RemapUpsample:\n    def time_nearest_neighbor_remapping(self):\n        self.uxds_480[\"bottomDepth\"].remap.nearest_neighbor(self.uxds_120.uxgrid)\n\n    def setup(self):\n        self.uxds_120 = ux.open_dataset(file_path_dict['120km'][0], file_path_dict['120km'][1])\n        self.uxds_480 = ux.open_dataset(file_path_dict['480km'][0], file_path_dict['480km'][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.RemapUpsample.time_nearest_neighbor_remapping",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "db94cc8878dce6417e0aa06f72be38042115986e62fe929389fb2b48d8c93582",
         "warmup_time": -1
     },
     "quad_hexagon.QuadHexagon.peakmem_open_dataset": {
