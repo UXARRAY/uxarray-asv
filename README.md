@@ -23,6 +23,19 @@ Step 4
 asv run --quick
 ```
 
+An example of the output (on a single benchmark file) is shown below. 
+```
+· Creating environments
+· Discovering benchmarks
+· Running 4 total benchmarks (1 commits * 1 environments * 4 benchmarks)
+[ 0.00%] · For uxarray commit 5410c4f0 <main>:
+[ 0.00%] ·· Benchmarking virtualenv-py3.11-netcdf4-pip+pyfma-setuptools_scm-xarray
+[12.50%] ··· quad_hexagon.QuadHexagon.peakmem_open_dataset                                                                                                               278M
+[25.00%] ··· quad_hexagon.QuadHexagon.peakmem_open_grid                                                                                                                  275M
+[37.50%] ··· quad_hexagon.QuadHexagon.time_open_dataset                                                                                                              29.8±0ms
+[50.00%] ··· quad_hexagon.QuadHexagon.time_open_grid                                                                                                                 20.0±0ms
+```
+
 ## Profiling
 ```
 asv profile benchmark_file.BenchmarkClass.benchmark_method
