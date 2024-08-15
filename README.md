@@ -5,18 +5,16 @@ Air Speed Velocity (ASV) benchmarking for the UXarray Python Package
 
 ## Quickstart
 
-
-UXarray's benchmark suite is written using the airspeed velocity package, which can be installed as follows:
-
-Step 1
+UXarray's benchmarks are stored in the package repository (not in this one), which should first be cloned. 
 ```
 git clone https://github.com/UXARRAY/uxarray.git
 ```
-Step 2
+
+The benchmarks and configuration files are located in the `benchmarks` directory.
 ```
 cd benchmarks
 ```
-Step 3
+Asv needs to be installed locally in order to run any benchmarks. 
 ```
 pip install asv
 ```
