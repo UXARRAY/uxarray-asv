@@ -33,6 +33,9 @@ To visualuze the results, ...
 asv profile benchmark_file.BenchmarkClass.benchmark_method --gui=snakeviz
 ```
 
+![image](https://github.com/user-attachments/assets/c0bfa596-7d86-413d-bf83-077f6e9d29ec)
+
+
 ## Local Development 
 
 By default, asv will pull the changes from the most recent committ from whichever branch is indicated by the `"branches"` variable in the `asv.conf.json` file.
