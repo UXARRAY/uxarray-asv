@@ -25,12 +25,12 @@ asv run --quick
 
 ## Profiling
 ```
-asv profile
+asv profile benchmark_file.BenchmarkClass.benchmark_method
 ```
 
 To visualuze the results, ...
 ```
-asv profile --gui=snakeviz
+asv profile benchmark_file.BenchmarkClass.benchmark_method --gui=snakeviz
 ```
 
 ## Local Development 
