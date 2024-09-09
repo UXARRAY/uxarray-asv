@@ -41,6 +41,12 @@ An example of the output (on a single benchmark file) is shown below.
 asv profile benchmark_file.BenchmarkClass.benchmark_method
 ```
 
+For parameterized benchmarks, you can profile a single parameter using the following:
+
+```
+todo
+```
+
 To visualuze the results, ...
 ```
 asv profile benchmark_file.BenchmarkClass.benchmark_method --gui=snakeviz
