@@ -230,6 +230,28 @@
         "version": "505e2bee0d40c2459579062763518d05d422328f5e6a4955815f8163789dc86e",
         "warmup_time": -1
     },
+    "mpas_ocean.HoleEdgeIndices.time_construct_hole_edge_indices": {
+        "code": "class HoleEdgeIndices:\n    def time_construct_hole_edge_indices(self, resolution):\n        ux.grid.geometry._construct_hole_edge_indices(self.uxds.uxgrid.edge_face_connectivity)\n\n    def setup(self, resolution):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.HoleEdgeIndices.time_construct_hole_edge_indices",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "9721e8e4eadfbb1cbd9e353e11bb66f2ceb3a946c59a0040419b48cc1258f165",
+        "warmup_time": -1
+    },
     "mpas_ocean.Integrate.peakmem_integrate": {
         "code": "class Integrate:\n    def peakmem_integrate(self, resolution):\n        integral = self.uxds[data_var].integrate()\n\n    def setup(self, resolution):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "name": "mpas_ocean.Integrate.peakmem_integrate",
