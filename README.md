@@ -57,9 +57,9 @@ asv profile benchmark_file.BenchmarkClass.benchmark_method --gui=snakeviz
 
 ## Local Development 
 
-By default, asv will pull the changes from the most recent committ from whichever branch is indicated by the `"branches"` variable in the `asv.conf.json` file.
+By default, `asv` will pull the changes from the most recent committ from whichever branch is indicated by the `"branches"` variable in the `asv.conf.json` file.
 
-First, uxarray should be installed locally in editable mode.
+First, `uxarray` should be installed locally in editable mode.
 ```
 pip install -e .
 ```
