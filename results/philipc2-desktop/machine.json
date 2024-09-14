@@ -1,0 +1,9 @@
+{
+    "arch": "AMD64",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700K",
+    "machine": "philipc2-desktop",
+    "num_cpu": "20",
+    "os": "Windows 11",
+    "ram": "32",
+    "version": 1
+}
