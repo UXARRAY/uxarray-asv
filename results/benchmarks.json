@@ -56,6 +56,28 @@
         "version": "05d7358a621ba8469294e43469945f02cd99857a9d23b35cc2a37d5c90deaf20",
         "warmup_time": -1
     },
+    "mpas_ocean.CheckNorm.time_check_norm": {
+        "code": "class CheckNorm:\n    def time_check_norm(self, resolution):\n        from uxarray.grid.validation import _check_normalization\n        _check_normalization(self.uxgrid)\n\n    def setup(self, resolution):\n        self.uxgrid = ux.open_grid(file_path_dict[resolution][0])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.CheckNorm.time_check_norm",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "80690bc549b4d4d30b9190960e39e99a70d987dd80b2fe9655f568b292f50f7c",
+        "warmup_time": -1
+    },
     "mpas_ocean.ConnectivityConstruction.time_face_face_connectivity": {
         "code": "class ConnectivityConstruction:\n    def time_face_face_connectivity(self, resolution):\n        ux.grid.connectivity._populate_face_face_connectivity(self.uxds.uxgrid)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
