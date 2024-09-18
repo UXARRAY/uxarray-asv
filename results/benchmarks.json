@@ -1,19 +1,4 @@
 {
-    "face_bounds.Bounds.time_bounds": {
-        "code": "class Bounds:\n    def time_bounds(self):\n        self.uxgrid.bounds\n\n    def setup(self):\n        self.uxgrid = ux.open_grid(r\"C:\\Users\\chmie\\PycharmProjects\\ncar-uxarray\\uxarray-hongyu\\benchmarks\\oQU480.grid.nc\")",
-        "min_run_count": 2,
-        "name": "face_bounds.Bounds.time_bounds",
-        "number": 0,
-        "param_names": [],
-        "params": [],
-        "repeat": 0,
-        "rounds": 2,
-        "sample_time": 0.01,
-        "type": "time",
-        "unit": "seconds",
-        "version": "f0dc6389b413dd90cc4bc89d04e22d4bded407582cf58cebc40a895c3e608dea",
-        "warmup_time": -1
-    },
     "face_bounds.FaceBounds.peakmem_face_bounds": {
         "code": "class FaceBounds:\n    def peakmem_face_bounds(self, grid_path):\n        \"\"\"Peak memory usage obtain ``Grid.face_bounds.\"\"\"\n        face_bounds = self.uxgrid.bounds\n\n    def setup(self, grid_path):\n        self.uxgrid = ux.open_grid(grid_path)",
         "name": "face_bounds.FaceBounds.peakmem_face_bounds",
