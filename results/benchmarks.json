@@ -79,7 +79,7 @@
         "warmup_time": -1
     },
     "mpas_ocean.ConnectivityConstruction.time_face_face_connectivity": {
-        "code": "class ConnectivityConstruction:\n    def time_face_face_connectivity(self, resolution):\n        ux.grid.connectivity._populate_face_face_connectivity(self.uxds.uxgrid)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class ConnectivityConstruction:\n    def time_face_face_connectivity(self, resolution):\n        ux.grid.connectivity._populate_face_face_connectivity(self.uxds.uxgrid)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.ConnectivityConstruction.time_face_face_connectivity",
         "number": 0,
@@ -97,11 +97,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "0e86f4796f5762f3d54fbc03de55c71678cd10713a9d855732c8d7f6271fb5d9",
+        "version": "d17d64682605c89f3a4a41dacad12310025c7e894bde080abaa54192989d3bfe",
         "warmup_time": -1
     },
     "mpas_ocean.ConnectivityConstruction.time_n_nodes_per_face": {
-        "code": "class ConnectivityConstruction:\n    def time_n_nodes_per_face(self, resolution):\n        self.uxds.uxgrid.n_nodes_per_face\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class ConnectivityConstruction:\n    def time_n_nodes_per_face(self, resolution):\n        self.uxds.uxgrid.n_nodes_per_face\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.ConnectivityConstruction.time_n_nodes_per_face",
         "number": 0,
@@ -119,11 +119,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "048a954b109fd388237d52a513b83fdb053c87fe5b04e39e2b0ed22db26ac7cc",
+        "version": "eb11f7750b605d9f6ea6467f4d970fc820bcab30a71e4ebb06b2bae37172a76f",
         "warmup_time": -1
     },
     "mpas_ocean.ConstructTreeStructures.time_ball_tree": {
-        "code": "class ConstructTreeStructures:\n    def time_ball_tree(self, resolution):\n        self.uxds.uxgrid.get_ball_tree()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class ConstructTreeStructures:\n    def time_ball_tree(self, resolution):\n        self.uxds.uxgrid.get_ball_tree()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.ConstructTreeStructures.time_ball_tree",
         "number": 0,
@@ -141,11 +141,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "e6c12f881e09c7410a76b884d48cbd5cfed69c7b1ac45f0a912c25e683644eec",
+        "version": "e7a6195397c4d1d166a7853510f074734c6066eeb2f5d8adb15911a8b29fc6eb",
         "warmup_time": -1
     },
     "mpas_ocean.ConstructTreeStructures.time_kd_tree": {
-        "code": "class ConstructTreeStructures:\n    def time_kd_tree(self, resolution):\n        self.uxds.uxgrid.get_kd_tree()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class ConstructTreeStructures:\n    def time_kd_tree(self, resolution):\n        self.uxds.uxgrid.get_kd_tree()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.ConstructTreeStructures.time_kd_tree",
         "number": 0,
@@ -163,11 +163,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "5cb806e87ae96ad594fa332873c00f308209beb043243fad87db127a6f58d0d2",
+        "version": "aa75da38392d38d48c16e798d32c8fc13c405fba9bfd70f066899abe430b212e",
         "warmup_time": -1
     },
     "mpas_ocean.GeoDataFrame.time_to_geodataframe": {
-        "code": "class GeoDataFrame:\n    def time_to_geodataframe(self, resolution, exclude_antimeridian):\n        self.uxds[data_var].to_geodataframe(exclude_antimeridian=exclude_antimeridian)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class GeoDataFrame:\n    def time_to_geodataframe(self, resolution, exclude_antimeridian):\n        self.uxds[data_var].to_geodataframe(exclude_antimeridian=exclude_antimeridian)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.GeoDataFrame.time_to_geodataframe",
         "number": 0,
@@ -190,11 +190,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "5ae84430963547882e3ca35285f39b2c73c17832f240321838d046fe481aff0a",
+        "version": "fdda72e8afd45608569fb3343f6f067cf3716dba26532eb142be9223fc5d0b98",
         "warmup_time": -1
     },
     "mpas_ocean.Gradient.peakmem_gradient": {
-        "code": "class Gradient:\n    def peakmem_gradient(self, resolution):\n        grad = self.uxds[data_var].gradient()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class Gradient:\n    def peakmem_gradient(self, resolution):\n        grad = self.uxds[data_var].gradient()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "name": "mpas_ocean.Gradient.peakmem_gradient",
         "param_names": [
             "resolution"
@@ -207,10 +207,10 @@
         ],
         "type": "peakmemory",
         "unit": "bytes",
-        "version": "ec24e9b4704c46d7ab04c978ae9b9d24c2e8ef6e77498414f29ec74ca6e8a34d"
+        "version": "2c5704784f88210b00288651dbcee688318ff4ebf5674568a090a297c508c8ff"
     },
     "mpas_ocean.Gradient.time_gradient": {
-        "code": "class Gradient:\n    def time_gradient(self, resolution):\n        self.uxds[data_var].gradient()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class Gradient:\n    def time_gradient(self, resolution):\n        self.uxds[data_var].gradient()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.Gradient.time_gradient",
         "number": 0,
@@ -228,11 +228,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "a6a46ac79f2cff8797ec9dc46acbbdf483ada08ae6701d6631d0382b0051c35d",
+        "version": "19b8246a1b7f7cd52ec73d727dca3bb45b1952d4ef7644d2f13f7929bb16c0ad",
         "warmup_time": -1
     },
     "mpas_ocean.HoleEdgeIndices.time_construct_hole_edge_indices": {
-        "code": "class HoleEdgeIndices:\n    def time_construct_hole_edge_indices(self, resolution):\n        ux.grid.geometry._construct_hole_edge_indices(self.uxds.uxgrid.edge_face_connectivity)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class HoleEdgeIndices:\n    def time_construct_hole_edge_indices(self, resolution):\n        ux.grid.geometry._construct_hole_edge_indices(self.uxds.uxgrid.edge_face_connectivity)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.HoleEdgeIndices.time_construct_hole_edge_indices",
         "number": 0,
@@ -250,11 +250,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "40d01110d8192eb24b3d3c7ce52f74afbaa2f8efd645eb650339db1cbfe9e4f9",
+        "version": "a430053e96f9871237f9ff8ea704a577a4f63617ab7c6bed07eb840194d992b3",
         "warmup_time": -1
     },
     "mpas_ocean.Integrate.peakmem_integrate": {
-        "code": "class Integrate:\n    def peakmem_integrate(self, resolution):\n        integral = self.uxds[data_var].integrate()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class Integrate:\n    def peakmem_integrate(self, resolution):\n        integral = self.uxds[data_var].integrate()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "name": "mpas_ocean.Integrate.peakmem_integrate",
         "param_names": [
             "resolution"
@@ -267,10 +267,10 @@
         ],
         "type": "peakmemory",
         "unit": "bytes",
-        "version": "c0f563e9fa258207351e560866f616dcbd6c00d73cba40377a8cdfcde2ecfd24"
+        "version": "9627f636ac2c145feb90416484eb94c9b0fe421250ff0f8f4f89e526da8d2c9a"
     },
     "mpas_ocean.Integrate.time_integrate": {
-        "code": "class Integrate:\n    def time_integrate(self, resolution):\n        self.uxds[data_var].integrate()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class Integrate:\n    def time_integrate(self, resolution):\n        self.uxds[data_var].integrate()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.Integrate.time_integrate",
         "number": 0,
@@ -288,11 +288,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "602926f39f66a5fee325785baf58dba3ae5cad8c95697670b119457ddcdb2461",
+        "version": "180accc984e741ea109341e013c286885335fc9eb4fc4bbe072ef49006c717f9",
         "warmup_time": -1
     },
     "mpas_ocean.MatplotlibConversion.time_dataarray_to_polycollection": {
-        "code": "class MatplotlibConversion:\n    def time_dataarray_to_polycollection(self, resolution, periodic_elements):\n        self.uxds[data_var].to_polycollection()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n    \n    \n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class MatplotlibConversion:\n    def time_dataarray_to_polycollection(self, resolution, periodic_elements):\n        self.uxds[data_var].to_polycollection()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.MatplotlibConversion.time_dataarray_to_polycollection",
         "number": 0,
@@ -316,7 +316,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "f8d69840e549a19644389544b092a40b8b32f29d28a21fc1c35c2fe6578a5977",
+        "version": "743db07382b77e8f1686d62df074bdbc72cb59afc76016db59c510653208b8a1",
         "warmup_time": -1
     },
     "mpas_ocean.RemapDownsample.time_inverse_distance_weighted_remapping": {
