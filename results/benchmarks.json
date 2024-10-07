@@ -122,6 +122,50 @@
         "version": "eb11f7750b605d9f6ea6467f4d970fc820bcab30a71e4ebb06b2bae37172a76f",
         "warmup_time": -1
     },
+    "mpas_ocean.ConstructFaceLatLon.time_cartesian_averaging": {
+        "code": "class ConstructFaceLatLon:\n    def time_cartesian_averaging(self, resolution):\n        self.uxgrid.construct_face_centers(method='cartesian average')\n\nclass GridBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxgrid = ux.open_grid(file_path_dict[resolution][0])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.ConstructFaceLatLon.time_cartesian_averaging",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "fcc73b823334b3777b52a18124001965168d8ad70517cfb9f6f7032be10d6caa",
+        "warmup_time": -1
+    },
+    "mpas_ocean.ConstructFaceLatLon.time_welzl": {
+        "code": "class ConstructFaceLatLon:\n    def time_welzl(self, resolution):\n        self.uxgrid.construct_face_centers(method='welzl')\n\nclass GridBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxgrid = ux.open_grid(file_path_dict[resolution][0])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.ConstructFaceLatLon.time_welzl",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "1cd1e29519b9368e0e4b542fc2ea0f0a08750e8f7fbd1b10b6f443af6024dae2",
+        "warmup_time": -1
+    },
     "mpas_ocean.ConstructTreeStructures.time_ball_tree": {
         "code": "class ConstructTreeStructures:\n    def time_ball_tree(self, resolution):\n        self.uxds.uxgrid.get_ball_tree()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
