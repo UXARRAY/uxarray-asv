@@ -210,6 +210,28 @@
         "version": "aa75da38392d38d48c16e798d32c8fc13c405fba9bfd70f066899abe430b212e",
         "warmup_time": -1
     },
+    "mpas_ocean.DualMesh.time_dual_mesh_construction": {
+        "code": "class DualMesh:\n    def time_dual_mesh_construction(self, resolution):\n        self.uxds.uxgrid.get_dual()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.DualMesh.time_dual_mesh_construction",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "4c77f40d6a63d0a30f57ff8da1c2be401d134379c52782c28349795153ff6ea8",
+        "warmup_time": -1
+    },
     "mpas_ocean.GeoDataFrame.time_to_geodataframe": {
         "code": "class GeoDataFrame:\n    def time_to_geodataframe(self, resolution, exclude_antimeridian):\n        self.uxds[data_var].to_geodataframe(exclude_antimeridian=exclude_antimeridian)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
