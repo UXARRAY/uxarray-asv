@@ -210,6 +210,35 @@
         "version": "aa75da38392d38d48c16e798d32c8fc13c405fba9bfd70f066899abe430b212e",
         "warmup_time": -1
     },
+    "mpas_ocean.CrossSections.time_constant_lat_fast": {
+        "code": "class CrossSections:\n    def time_constant_lat_fast(self, resolution, n_lat):\n        for lat in np.linspace(-89, 89, n_lat):\n            self.uxds.uxgrid.constant_latitude_cross_section(lat, method='fast')\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.CrossSections.time_constant_lat_fast",
+        "number": 0,
+        "param_names": [
+            "resolution",
+            "n_lat"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ],
+            [
+                "1",
+                "2",
+                "4",
+                "8"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "38d02b4d0b3526585869dee7be1ddaad0fc884e75b1ea2a09be43221571635e4",
+        "warmup_time": -1
+    },
     "mpas_ocean.DualMesh.time_dual_mesh_construction": {
         "code": "class DualMesh:\n    def time_dual_mesh_construction(self, resolution):\n        self.uxds.uxgrid.get_dual()\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
