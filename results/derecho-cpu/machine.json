@@ -1,0 +1,8 @@
+{
+    "cpu": "AMD EPYC 7763 Milan",
+    "machine": "derecho-cpu",
+    "num_cpu": "128",
+    "os": "linux",
+    "ram": "256GB",
+    "version": 1
+}
