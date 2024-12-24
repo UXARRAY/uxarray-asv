@@ -210,14 +210,14 @@
         "version": "aa75da38392d38d48c16e798d32c8fc13c405fba9bfd70f066899abe430b212e",
         "warmup_time": -1
     },
-    "mpas_ocean.CrossSections.time_constant_lat_fast": {
-        "code": "class CrossSections:\n    def time_constant_lat_fast(self, resolution, n_lat):\n        for lat in np.linspace(-89, 89, n_lat):\n            self.uxds.uxgrid.constant_latitude_cross_section(lat, method='fast')\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+    "mpas_ocean.CrossSection.time_const_lat": {
+        "code": "class CrossSection:\n    def time_const_lat(self, resolution, lat_step):\n        for lat in self.lats:\n            self.uxgrid.cross_section.constant_latitude(lat)\n\n    def setup(self, resolution, lat_step):\n        self.uxgrid = ux.open_grid(file_path_dict[resolution][0])\n        self.uxgrid.normalize_cartesian_coordinates()\n        self.lats = np.arange(-45, 45, lat_step)\n        _ = self.uxgrid.bounds",
         "min_run_count": 2,
-        "name": "mpas_ocean.CrossSections.time_constant_lat_fast",
+        "name": "mpas_ocean.CrossSection.time_const_lat",
         "number": 0,
         "param_names": [
             "resolution",
-            "n_lat"
+            "lat_step"
         ],
         "params": [
             [
@@ -227,8 +227,7 @@
             [
                 "1",
                 "2",
-                "4",
-                "8"
+                "4"
             ]
         ],
         "repeat": 0,
@@ -236,7 +235,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "38d02b4d0b3526585869dee7be1ddaad0fc884e75b1ea2a09be43221571635e4",
+        "version": "90e5ec308cf49e2f67adfb7c8226a97bab68449805eb27163988bcfd6f797a2d",
         "warmup_time": -1
     },
     "mpas_ocean.DualMesh.time_dual_mesh_construction": {
@@ -327,7 +326,7 @@
         "warmup_time": -1
     },
     "mpas_ocean.HoleEdgeIndices.time_construct_hole_edge_indices": {
-        "code": "class HoleEdgeIndices:\n    def time_construct_hole_edge_indices(self, resolution):\n        ux.grid.geometry._construct_hole_edge_indices(self.uxds.uxgrid.edge_face_connectivity)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "code": "class HoleEdgeIndices:\n    def time_construct_hole_edge_indices(self, resolution):\n        ux.grid.geometry._construct_boundary_edge_indices(self.uxds.uxgrid.edge_face_connectivity)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
         "name": "mpas_ocean.HoleEdgeIndices.time_construct_hole_edge_indices",
         "number": 0,
@@ -345,7 +344,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "a430053e96f9871237f9ff8ea704a577a4f63617ab7c6bed07eb840194d992b3",
+        "version": "d62b0286adad1a9a588d51e34f7ddffc212888d935b53347df6f8e3ee58fe594",
         "warmup_time": -1
     },
     "mpas_ocean.Integrate.peakmem_integrate": {
