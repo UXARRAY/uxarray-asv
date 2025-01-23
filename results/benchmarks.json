@@ -210,14 +210,14 @@
         "version": "aa75da38392d38d48c16e798d32c8fc13c405fba9bfd70f066899abe430b212e",
         "warmup_time": -1
     },
-    "mpas_ocean.CrossSection.time_const_lat": {
-        "code": "class CrossSection:\n    def time_const_lat(self, resolution, lat_step):\n        for lat in self.lats:\n            self.uxgrid.cross_section.constant_latitude(lat)\n\n    def setup(self, resolution, lat_step):\n        self.uxgrid = ux.open_grid(file_path_dict[resolution][0])\n        self.uxgrid.normalize_cartesian_coordinates()\n        self.lats = np.arange(-45, 45, lat_step)\n        _ = self.uxgrid.bounds",
+    "mpas_ocean.CrossSections.time_const_lat": {
+        "code": "class CrossSections:\n    def time_const_lat(self, resolution, lat_step):\n        for lat in self.lats:\n            self.uxgrid.cross_section.constant_latitude(lat)\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
         "min_run_count": 2,
-        "name": "mpas_ocean.CrossSection.time_const_lat",
+        "name": "mpas_ocean.CrossSections.time_const_lat",
         "number": 0,
         "param_names": [
             "resolution",
-            "lat_step"
+            "n_lat"
         ],
         "params": [
             [
@@ -227,7 +227,8 @@
             [
                 "1",
                 "2",
-                "4"
+                "4",
+                "8"
             ]
         ],
         "repeat": 0,
@@ -235,7 +236,36 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "90e5ec308cf49e2f67adfb7c8226a97bab68449805eb27163988bcfd6f797a2d",
+        "version": "07305dfff61c3c0f52d276b43acf8686aeaa164ad147cd7c6c969c48dd0ff507",
+        "warmup_time": -1
+    },
+    "mpas_ocean.CrossSections.time_constant_lat_fast": {
+        "code": "class CrossSections:\n    def time_constant_lat_fast(self, resolution, n_lat):\n        for lat in np.linspace(-89, 89, n_lat):\n            self.uxds.uxgrid.constant_latitude_cross_section(lat, method='fast')\n\nclass DatasetBenchmark:\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])",
+        "min_run_count": 2,
+        "name": "mpas_ocean.CrossSections.time_constant_lat_fast",
+        "number": 0,
+        "param_names": [
+            "resolution",
+            "n_lat"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ],
+            [
+                "1",
+                "2",
+                "4",
+                "8"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "38d02b4d0b3526585869dee7be1ddaad0fc884e75b1ea2a09be43221571635e4",
         "warmup_time": -1
     },
     "mpas_ocean.DualMesh.time_dual_mesh_construction": {
@@ -471,6 +501,28 @@
         "type": "time",
         "unit": "seconds",
         "version": "db94cc8878dce6417e0aa06f72be38042115986e62fe929389fb2b48d8c93582",
+        "warmup_time": -1
+    },
+    "mpas_ocean.ZonalAverage.time_zonal_average": {
+        "code": "class ZonalAverage:\n    def time_zonal_average(self, resolution):\n        lat_step = 10\n        self.uxds['bottomDepth'].zonal_mean(lat=(-45, 45, lat_step))\n\n    def setup(self, resolution, *args, **kwargs):\n        self.uxds = ux.open_dataset(file_path_dict[resolution][0], file_path_dict[resolution][1])\n        bounds = self.uxds.uxgrid.bounds",
+        "min_run_count": 2,
+        "name": "mpas_ocean.ZonalAverage.time_zonal_average",
+        "number": 0,
+        "param_names": [
+            "resolution"
+        ],
+        "params": [
+            [
+                "'480km'",
+                "'120km'"
+            ]
+        ],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "399e05af92e5521a0ffa0d4dec5457ac3260af213cb84941642768b705c03cd5",
         "warmup_time": -1
     },
     "quad_hexagon.QuadHexagon.peakmem_open_dataset": {
